@@ -46,16 +46,13 @@ class Solution {
     }
     // Function to return a list containing the DFS traversal of the graph.
     public ArrayList<Integer> dfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj) {
-        // Code here
-        boolean vis[]=new boolean[V];
+        boolean vis[]= new boolean[V];
         ArrayList<Integer> ans = new ArrayList<Integer>();
-        
         for (int i=0; i<V;i++){
             if(vis[i]==false){
-                dfs(i,adj,vis,ans);
+                dfs(i, adj, vis, ans);
             }
         }
         return ans;
-        
     }
 }
