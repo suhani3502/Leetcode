@@ -40,19 +40,19 @@ class Solution
     public static int maxMeetings(int start[], int end[], int n)
     {
         int count=0;
-        int a[][]= new int[n][3];
-        for (int i=0; i<n; i++){
-            a[i][0]=i+1;
-            a[i][1]=start[i];
-            a[i][2]=end[i];
+        int arr[][]=new int[n][3];
+        for (int i=0; i<n;i++){
+            arr[i][0]=i+1;
+            arr[i][1]=start[i];
+            arr[i][2]=end[i];
         }
-        Arrays.sort(a, Comparator.comparingInt(o -> o[2]));
-        int r= a[0][2];
-        count = count +1;
-        for (int i=0; i<a.length; i++){
-            if(a[i][1]>r){
+        Arrays.sort(arr, Comparator.comparingInt(o -> o[2]));
+        int r= arr[0][2];
+        count=count+1;
+        for (int i=0; i<arr.length;i++){
+            if(arr[i][1]>r){
                 count++;
-                r=a[i][2];
+                r=arr[i][2];
             }
         }
         return count;
