@@ -47,8 +47,7 @@ class Solution {
         ListNode middleElement = middle(head);
         ListNode reverseList=middleElement.next;
         middleElement.next=null;
-        
-        reverseList= reverse(reverseList);
+        reverseList=reverse(reverseList);
         
         merge(head , reverseList);
     }
