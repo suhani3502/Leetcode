@@ -1,17 +1,12 @@
 class Solution {
     public void moveZeroes(int[] nums) {
-        Stack <Integer> stack=new Stack<>();
-        for (int i=0; i<nums.length;i++){
-            if(nums[i]!=0) stack.push(nums[i]);
-            else continue;
+        int i=0;
+        for(final int num: nums){
+            if(num!=0)
+            nums[i++]=num;
         }
-        for (int i=0 ; i<nums.length;i++){
-            if (nums[i]==0){
-                stack.push(nums[i]);
-            }
-        }
-        for (int i=nums.length-1 ; i>=0 ; i--){
-            nums[i]=stack.pop();
+        while(i<nums.length){
+            nums[i++]=0;
         }
     }
 }
